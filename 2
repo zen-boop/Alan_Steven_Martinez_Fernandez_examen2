@@ -1,0 +1,19 @@
+print("");print("Alan Steven Martinez Fernandez");print("")
+class Persona:#clase Persona
+    def __init__(self,n,e):#funciom int con self,n y e
+        """los mete a un self"""
+        self.n=n
+        self.e=e
+    def i(self):#trae al self para que imprima las partes elegidas
+        print(f"Nombre: {self.n}")#coloca el nombre
+        print(f"Edad: {self.e}")#coloca la edad
+    def r(self):#tra el self para que compare
+        if self.e>=18:#so "self.no" es mayor o igual a 6 se realiza
+            print(f"{self.n} es mayor de edad {self.e}.")#pone mayor
+        else:#si no se cumple se realiza
+            print(f"{self.n} es menor de edad {self.e}.")#pone menor
+n=input("Introduce el nombre de la persona: ")#te pide que coloques el nombre
+e=int(input("Introduce la edad de la persona: "))#te pide que coloques la edad
+p=Persona(n,e)#hace que "p" tenga el valor de la clase alumno y esta se lleva a "n" y a "e"
+p.i()#coloca el nombre y calificacion
+p.r()#dice si aprobo o no
