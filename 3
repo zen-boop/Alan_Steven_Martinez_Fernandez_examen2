@@ -1,0 +1,24 @@
+print("");print("Alan Steven Martinez Fernandez");print("")
+class Triangulo:#clase triangulo
+    def __init__(self,l1,l2,l3):#funcion que crea "li,l2,l3 y self"
+        """introduce todos los lados a self"""
+        self.l1=l1
+        self.l2=l2
+        self.l3=l3
+    def il(self):#funcion de "il"
+        m=max(self.l1,self.l2,self.l3)#compara el lado mayor gracias al max
+        print(f"El lado de mayor tamaño es: {m}")#coloca el lado mayor
+    def tt(self):#funcion de "tt"
+        if self.l1==self.l2==self.l3:#compara si todos los lados son iguales
+            print("El triángulo es equilátero.")#imprime que es equilatero
+        elif self.l1==self.l2 or self.l1==self.l3 or self.l2==self.l3:#si no se cumple compara si 2 se sus lados son iguales
+            print("El triángulo es isósceles.")#dice que es isóceles
+        else:#si no se cumple nad ase realiza esto
+            print("El triángulo es escaleno.")
+"""te pide que coloques los valores de los triangulos los define como float y da la instruccion de cuando"""
+l1=float(input("Introduce el tamaño del primer lado: "))
+l2=float(input("Introduce el tamaño del segundo lado: "))
+l3=float(input("Introduce el tamaño del tercer lado: "))
+t=Triangulo(l1,l2,l3)#añade el valor de "Triangulo" a 2t" y la clase se lleva "l1,l2 y l3"
+t.il()#coloca el mayor
+t.tt()#coloca que triangulo es
