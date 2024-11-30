@@ -1,0 +1,19 @@
+print("");print("Alan Steven Martinez Fernandez");print("")
+class Alumno:#clase alumno
+    def __init__(self,n,no):#funciom int con self,n y no
+        """los mete a un self"""
+        self.n=n
+        self.no=no
+    def i(self):#trae al self para que imprima las partes elegidas
+        print(f"Nombre: {self.n}")#coloca el nombre
+        print(f"Nota: {self.no}")#coloca la calificacion
+    def r(self):#tra el self para que compare
+        if self.no>=6:#so "self.no" es mayor o igual a 6 se realiza
+            print(f"{self.n} ha aprobado con una nota de {self.no}.")#pone que aprobo
+        else:#si no se cumple se realiza
+            print(f"{self.n} ha reprobado con una nota de {self.no}.")#pone que reprobo
+n=input("Introduce el nombre del alumno: ")#te pide que coloques el nombre
+no=float(input("Introduce la nota del alumno: "))#te pide que coloques la nota
+a=Alumno(n,no)#hace que "a" tenga el valor de la clase alumno y esta se lleva a "n" y a "no"
+a.i()#coloca el nombre y calificacion
+a.r()#dice si aprobo o no
