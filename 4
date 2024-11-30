@@ -1,0 +1,26 @@
+print("");print("Alan Steven Martinez Fernandez");print("")
+class Calculadora:#clase se de calculadora
+    def __init__(self,v1,v2):#funcion de "self,v1,v2"
+        """mete los 2 al self"""
+        self.v1=v1
+        self.v2=v2
+    def s(self):#funcion de s
+        return self.v1+self.v2#hace la operacion
+    def r(self):#funcion de
+        return self.v1-self.v2#hace la operacion
+    def m(self):#funcion de
+        return self.v1*self.v2#hace la operacion
+    def d(self):#funcion de
+        if self.v2!=0:#se realiza si "self.v2" es diferente a 0
+            return self.v1/self.v2#hace la operacion
+        else:#si no se cumple se realiza lo de abajo
+            return "Error: División por cero"#da error
+"""hace que puedas asignar valor a las variables y define como int"""
+v1=int(input("Introduce el primer valor entero: "))
+v2=int(input("Introduce el segundo valor entero: "))
+c=Calculadora(v1,v2)#mete "Calculadora" a "c" y se lleva " v1 y v2"
+"""coloca los resultados"""
+print(f"La suma de {v1} y {v2} es: {c.s()}")
+print(f"La resta de {v1} y {v2} es: {c.r()}")
+print(f"La multiplicación de {v1} y {v2} es: {c.m()}")
+print(f"La división de {v1} y {v2} es: {c.d()}")
