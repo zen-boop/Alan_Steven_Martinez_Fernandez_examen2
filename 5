@@ -1,0 +1,67 @@
+print("");print("Alan Steven Martinez Fernandez");print("")
+class Agenda:#clase de agenda
+    def __init__(self):#funcion del self
+        self.cs = []#crea una lista y la mete en el self
+    def anadir_contacto(self, n, t, e):#funcion de los contctos
+        c={"nombre": n, "telefono": t, "email": e}#los introduce a la lista
+        self.cs.append(c)#append para añadir c
+        print(f"Contacto {n} añadido.")#dice que lo añadio
+    def listar_contactos(self):#funcion de contactos
+        if not self.cs:#si no hay nada pone
+            print("La agenda está vacía.")#esta vacia
+        else:#si no se realiza se ejecutab este
+            for c in self.cs:#se colocara mientras c este en self.cs
+                print(f"Nombre: {c['nombre']}, Teléfono: {c['telefono']}, Email: {c['email']}")#coloca la lista
+    def buscar_contacto(self, n):#funcion de buscar contactos
+        for c in self.cs:#se realiza si c esta en self.cs
+            if c["nombre"].lower() == n.lower():#si c["nombre"] en lowe es igual a n.lowe se realiza
+                print(f"Nombre: {c['nombre']}, Teléfono: {c['telefono']}, Email: {c['email']}")#coloca el nombe buscado
+                return#lo regresa
+        print(f"Contacto {n} no encontrado.")#si no existe dice que no se encontro
+    def editar_contacto(self, n):#funcion de editae
+        for c in self.cs:#se realiza mientrs c este en self.cs
+            if c["nombre"].lower() == n.lower():#si["nombre"].lower() es igual a n.lower() se realiza
+                """te pide que coloques los datos"""
+                nn = input("Introduce el nuevo nombre: ")
+                nt = input("Introduce el nuevo teléfono: ")
+                ne = input("Introduce el nuevo email: ")
+                """añade los datos"""
+                c["nombre"] = nn
+                c["telefono"] = nt
+                c["email"] = ne
+                print(f"Contacto {n} actualizado.")#dice que lo actualizo0
+                return
+        print(f"Contacto {n} no encontrado.")#dice que no lo encontro
+    def cerrar_agenda(self):#funcion de cerrar agenda
+        print("Cerrando agenda...")#coloca que la cerro
+        exit()#termina el programa y sale
+def mostrar_menu():#funcion de mostrar el menu
+    """muestra el menu y las instrucciones de uso"""
+    print("\nMenú de la Agenda")
+    print("1. Añadir contacto")
+    print("2. Lista de contactos")
+    print("3. Buscar contacto")
+    print("4. Editar contacto")
+    print("5. Cerrar agenda")
+a=Agenda()#añade el valor de Agenda  a
+while True:#se realiza mientras sea verdad
+    mostrar_menu()#muestra el menu
+    o = input("Elige una opción: ")#hace que eligas el numero deseado
+    if o == "1":#se realiza si o es igual a 1
+        """hace que coloques los valores"""
+        n = input("Introduce el nombre: ")
+        t = input("Introduce el teléfono: ")
+        e = input("Introduce el email: ")
+        a.anadir_contacto(n, t, e) #añade el contacto y se lleva n,t y e
+    elif o == "2":#se realiza si o es igual a 2
+        a.listar_contactos()#coloca la lista de contactos
+    elif o == "3":#se realiza si o es igual a 3
+        n = input("Introduce el nombre del contacto a buscar: ")#hace que coloques el nombre
+        a.buscar_contacto(n)#añade a el buscador de contactos
+    elif o == "4":#se realiza si o es igual a 4
+        n = input("Introduce el nombre del contacto a editar: ")#hace que coloques el nombre
+        a.editar_contacto(n)#lo añade para editar
+    elif o == "5":#se realiza si o es igual a 5
+        a.cerrar_agenda()#cierra la agenda
+    else:#se realiza cuado no se cumpla ninguna opcion
+        print("Opción no válida. Por favor, elige una opción del 1 al 5.")#dice que eso no se pued poner
